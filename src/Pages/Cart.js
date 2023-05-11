@@ -24,7 +24,9 @@ const Cart = () => {
   const decreaseQty = (id) => {
     setCartItems(
       cartItems.map((item) =>
-        item?.data?.id === id ? { ...item, qty: item.qty - 1 } : item
+        item?.data?.id === id
+          ? { ...item, qty: item.qty !== 0 ? item.qty - 1 : 0 }
+          : item
       )
     );
   };
