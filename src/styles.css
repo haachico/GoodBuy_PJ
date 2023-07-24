@@ -146,7 +146,7 @@ body {
 }
 
 .book--component img {
-  width: 14rem;
+  width: 100%;
   border-radius: 5px;
   margin-bottom: 12px;
 }
@@ -220,6 +220,7 @@ p {
 .hostLayout--nav {
   color: black;
   padding: 1rem;
+  margin-bottom: 4rem;
 }
 
 .hostLayout--nav a {
@@ -367,6 +368,10 @@ form button {
   flex-grow: 1;
 }
 
+a {
+  text-decoration: none;
+}
+
 .cart--card img {
   width: 15rem;
   height: 18rem;
@@ -440,4 +445,35 @@ form button {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   margin-bottom: 2rem;
   border-radius: 5px;
+}
+
+footer {
+  background-color: #161616;
+  color: #aaaaaa;
+  height: 74px;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  font-weight: 500;
+}
+
+.epubbook--details--profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+.epubbook--details {
+  padding: 1rem;
+}
+
+.epub--info {
+  width: 90%;
+}
+.epubbook--details--profile img {
+  width: 14rem;
+  height: 15rem;
 }

@@ -11,11 +11,15 @@ import Cart from "./Pages/Cart";
 import Books, { loader as booksLoader } from "./Pages/Books";
 import BookDetails, { loader as detailsLoader } from "./Pages/BookDetails";
 import Layout from "./Components/Layout";
-// import Dashboard from "./Pages/Dashboard";
+import Dashboard from "./Pages/Dashboard";
 import Reviews from "./Pages/Reviews";
-import Income from "./Pages/Income";
+import EpubBooks from "./Pages/EpubBooks";
 import HostLayout from "./Components/HostLayout";
 import ErrorPage from "./Pages/ErrorPage";
+import EpubBookDetails from "./Pages/EpubBookDetails";
+import EpubBookInfo from "./Pages/EpubBookInfo";
+import EpubBookPricing from "./Pages/EpubBookPricing";
+import EpubBookPhoto from "./Pages/EpubBookPhoto";
 
 import Login, { loader as loginLoader } from "./Pages/Login";
 import requiredAuth from "./utils";
@@ -62,15 +66,21 @@ for ref, also check how useParams was in BookDettails component.
           //   return await requiredAuth();
           // }}
         /> */}
-        {/* <Route
-          path="income"
-          element={<Income />}
+        <Route
+          // path="epubBooks"
+          index
+          element={<EpubBooks />}
           // loader={async () => {
           //   return await requiredAuth();
           // }}
-        /> */}
+        />
+        <Route path="epubBooks/:id" element={<EpubBookDetails />}>
+          <Route index element={<EpubBookInfo />} />
+          <Route path="pricing" element={<EpubBookPricing />} />
+          <Route path="photos" element={<EpubBookPhoto />} />
+        </Route>
         <Route
-          index
+          path="review"
           element={<Reviews />}
           // loader={async () => {
           //   return await requiredAuth();

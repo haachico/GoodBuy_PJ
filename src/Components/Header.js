@@ -7,9 +7,15 @@ import { booksContext } from "..";
 const Header = () => {
   const { cartItems } = useContext(booksContext);
   const { user, loginWithRedirect, logout, isAuthenticated } = useAuth0();
+
+  const activeStyle = ({ isActive }) => ({
+    fontWeight: isActive ? "bold" : "",
+    textDecoration: isActive ? "underline" : "",
+    color: isActive ? "#161616" : "",
+  });
   return (
     <header className="header--section">
-      <NavLink to="/" className="site-logo">
+      <NavLink to="/" className="site-logo" style={activeStyle}>
         GoodBuys
       </NavLink>
       {console.log(user)}
@@ -22,7 +28,7 @@ const Header = () => {
 
         {console.log(isAuthenticated, "isauthenticated")}
         {isAuthenticated ? (
-          <NavLink to="/host" className="about">
+          <NavLink to="/host" className="about" style={activeStyle}>
             Host
           </NavLink>
         ) : (
@@ -32,16 +38,16 @@ const Header = () => {
         )}
 
         {/* Sinca all are relative paths, we can remove "/" from start and instead directly write the path name */}
-        <NavLink to="about" className="about">
+        <NavLink to="about" className="about" style={activeStyle}>
           About
         </NavLink>
-        <NavLink to="books" className="about">
+        <NavLink to="books" className="about" style={activeStyle}>
           Books
         </NavLink>
-        <NavLink to="cart" className="about">
+        <NavLink to="cart" className="about" style={activeStyle}>
           Cart ({cartItems.length})
         </NavLink>
-        <NavLink to="" className="login">
+        <NavLink to="" className="login" style={activeStyle}>
           {" "}
           {isAuthenticated ? (
             <button

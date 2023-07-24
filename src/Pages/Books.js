@@ -28,7 +28,6 @@ export const loader = () => {
 
 const Books = () => {
   const data = useLoaderData();
-  console.log(data, "data");
 
   //useSearchParams returns an array of serachParams and setIsLoading, just like useState
   const [searchParams, setSearchParams] = useSearchParams();
